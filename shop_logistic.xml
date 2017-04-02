@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<extension version="3" type="plugin" method="upgrade" group="vmshipment">
+    <name>plg_shop_logistic</name>
+    <author>Kohav</author>
+    <creationDate>April 2017</creationDate>
+    <copyright>Copyright (C) 2017</copyright>
+    <license>License</license>
+    <authorEmail>kohavSheifa@yandex.ua</authorEmail>
+    <authorUrl>www.webveles.com/workshop</authorUrl>
+    <version>1.1.0</version>
+    <description>PLG_SHOP_LOGISTIC_XML_DESCRIPTION</description>
+    <languages folder="language">
+        <language tag="ru-RU">ru-RU/ru-RU.plg_vmshipment_shop_logistic.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.plg_vmshipment_shop_logistic.sys.ini</language>
+    </languages>
+
+    <files>
+        <folder>language</folder>
+        <folder>tmpl</folder>
+        <filename plugin="shop_logistic">shop_logistic.php</filename>
+        <filename plugin="shop_logistic">shop_logistic.xml</filename>
+        <filename plugin="shop_logistic">index.html</filename>
+    </files>
+
+   <vmconfig>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="api_klient" type="text" size="10" default=""
+                       label="VMSHIPMENT_SHOP_LOGISTIC_API"
+                       description="VMSHIPMENT_SHOP_LOGISTIC_API_DESC"/>
+            </fieldset>
+            <fieldset name="restrictions">
+                <field name="show_on_pdetails" type="radio" scope="com_virtuemart" default="1"
+                       label="VMSHIPMENT_SHOP_LOGISTIC_SHOW_ON_PRDETAILS"
+                       description="VMSHIPMENT_SHOP_LOGISTIC_SHOW_ON_PRDETAILS_TIP">
+                    <option value="0">COM_VIRTUEMART_NO</option>
+                    <option value="1">COM_VIRTUEMART_YES</option>
+                </field>
+                <field name="categories" value_field="category_name" type="vmcategories" multiple="true" size="10" default="" label="VMSHIPMENT_SHOP_LOGISTIC_CATEGORIES"
+                       description="VMSHIPMENT_SHOP_LOGISTIC_CATEGORIES_DESC"/>
+                <field name="blocking_categories" value_field="category_name" type="vmcategories" multiple="true" size="10" default="" label="VMSHIPMENT_SHOP_LOGISTIC_BLOCKING_CATEGORIES"
+                       description="VMSHIPMENT_SHOP_LOGISTIC_BLOCKING_CATEGORIES_DESC"/>
+                <field name="countries" type="vmcountries" multiple="true" scope="com_virtuemart" default=""
+                       label="VMSHIPMENT_SHOP_LOGISTIC_COUNTRIES" description="VMSHIPMENT_SHOP_LOGISTIC_COUNTRIES_DESC"/>
+                <field name="zip_start" type="text" size="10" default="" label="VMSHIPMENT_SHOP_LOGISTIC_ZIP_START"
+                       description="VMSHIPMENT_SHOP_LOGISTIC_ZIP_START_DESC"/>
+                <field name="zip_stop" type="text" size="10" default="" label="VMSHIPMENT_SHOP_LOGISTIC_ZIP_STOP"
+                       description="VMSHIPMENT_SHOP_LOGISTIC_ZIP_STOP_DESC"/>
+                <field name="weight_start" type="text" size="10" default=""
+                       label="VMSHIPMENT_SHOP_LOGISTIC_WEIGHT_START"
+                       description="VMSHIPMENT_SHOP_LOGISTIC_WEIGHT_START_DESC"/>
+                <field name="weight_stop" type="text" size="10" default=""
+                       label="VMSHIPMENT_SHOP_LOGISTIC_WEIGHT_STOP"
+                       description="VMSHIPMENT_SHOP_LOGISTIC_WEIGHT_STOP_DESC"/>
+                <field name="weight_unit" type="vmweightunit" size="10" default=""
+                       label="VMSHIPMENT_SHOP_LOGISTIC_WEIGHT_UNIT"
+                       description="VMSHIPMENT_SHOP_LOGISTIC_WEIGHT_UNIT_DESC"/>
+                <field name="nbproducts_start" type="text" size="10" default=""
+                       label="VMSHIPMENT_SHOP_LOGISTIC_NBPRODUCTS_START"
+                       description="VMSHIPMENT_SHOP_LOGISTIC_NBPRODUCTS_START_DESC"/>
+                <field name="nbproducts_stop" type="text" size="10" default=""
+                       label="VMSHIPMENT_SHOP_LOGISTIC_NBPRODUCTS_STOP"
+                       description="VMSHIPMENT_SHOP_LOGISTIC_NBPRODUCTS_STOP_DESC"/>
+                <field name="orderamount_start" type="text" size="10" default=""
+                       label="VMSHIPMENT_SHOP_LOGISTIC_ORDERAMOUNT_START"
+                       description="VMSHIPMENT_SHOP_LOGISTIC_ORDERAMOUNT_START_DESC"/>
+                <field name="orderamount_stop" type="text" size="10" default=""
+                       label="VMSHIPMENT_SHOP_LOGISTIC_ORDERAMOUNT_STOP"
+                       description="VMSHIPMENT_SHOP_LOGISTIC_ORDERAMOUNT_STOP_DESC"/>
+            </fieldset>
+            <fieldset name="fee">
+                <field name="shipment_cost" type="text" label="VMSHIPMENT_SHOP_LOGISTIC_COST"
+                       description="VMSHIPMENT_SHOP_LOGISTIC_COST_DESC" default="0"/>
+                <field name="package_fee" type="text" label="VMSHIPMENT_SHOP_LOGISTIC_PACKAGE_FEE"
+                       description="VMSHIPMENT_SHOP_LOGISTIC_PACKAGE_FEE_DESC"/>
+                <field name="tax_id" type="vmtaxes" scope="com_virtuemart" label="VMSHIPMENT_SHOP_LOGISTIC_TAX"
+                       description="VMSHIPMENT_SHOP_LOGISTIC_TAX_DESC" default="0"/>
+                <field name="free_shipment" type="text" label="VMSHIPMENT_SHOP_LOGISTIC_FREE_SHIPPING_AMOUNT"
+                       description="VMSHIPMENT_SHOP_LOGISTIC_FREE_SHIPPING_AMOUNT_DESC" default=""/>
+
+                <field name="shop_logisic_type" type="list" default="0"
+                       label="VMSHIPMENT_SHOP_LOGISTIC_TYPE" description="VMSHIPMENT_SHOP_LOGISTIC_TYPE_DESC">
+                    <option
+                            value="1">VMSHIPMENT_SHOP_LOGISTIC_TYPE1</option>
+                    <option
+                            value="2">VMSHIPMENT_SHOP_LOGISTIC_TYPE2</option>
+                    <option
+                            value="3">VMSHIPMENT_SHOP_LOGISTIC_TYPE3</option>
+                    <option
+                            value="4">VMSHIPMENT_SHOP_LOGISTIC_TYPE4</option>
+                </field>
+            </fieldset>
+        </fields>
+    </vmconfig>
+</extension>
